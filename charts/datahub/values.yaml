@@ -5,6 +5,12 @@ datahub-gms:
   image:
     repository: linkedin/datahub-gms
     tag: "v0.8.38"
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 datahub-frontend:
   enabled: true
@@ -14,6 +20,12 @@ datahub-frontend:
   # Set up ingress to expose react front-end
   ingress:
     enabled: false
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 acryl-datahub-actions:
   enabled: true
@@ -22,26 +34,44 @@ acryl-datahub-actions:
     tag: "v0.0.1-beta.13"
   resources:
     limits:
-      memory: 512Mi
+      memory: 100Mi
     requests:
-      cpu: 300m
-      memory: 256Mi
+      cpu: 10m
+      memory: 100Mi
 
 datahub-mae-consumer:
   image:
     repository: linkedin/datahub-mae-consumer
     tag: "v0.8.38"
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 datahub-mce-consumer:
   image:
     repository: linkedin/datahub-mce-consumer
     tag: "v0.8.38"
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 datahub-ingestion-cron:
   enabled: false
   image:
     repository: acryldata/datahub-ingestion
     tag: "v0.8.38"
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 elasticsearchSetupJob:
   enabled: true
@@ -52,6 +82,13 @@ elasticsearchSetupJob:
     fsGroup: 1000
   securityContext:
     runAsUser: 1000
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
+
 
 kafkaSetupJob:
   enabled: true
@@ -62,6 +99,12 @@ kafkaSetupJob:
     fsGroup: 1000
   securityContext:
     runAsUser: 1000
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 mysqlSetupJob:
   enabled: true
@@ -72,6 +115,12 @@ mysqlSetupJob:
     fsGroup: 1000
   securityContext:
     runAsUser: 1000
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 postgresqlSetupJob:
   enabled: false
@@ -82,6 +131,12 @@ postgresqlSetupJob:
     fsGroup: 1000
   securityContext:
     runAsUser: 1000
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 datahubUpgrade:
   enabled: true
@@ -94,6 +149,12 @@ datahubUpgrade:
     # fsGroup: 1000
   securityContext: {}
     # runAsUser: 1000
+  resources:
+    limits:
+      memory: 100Mi
+    requests:
+      cpu: 10m
+      memory: 100Mi
 
 global:
   graph_service_impl: neo4j
